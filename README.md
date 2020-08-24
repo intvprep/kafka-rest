@@ -32,6 +32,7 @@ Quickstart
 The following assumes you have Kafka  and an instance of
 the REST Proxy running using the default settings and some topics already created.
 
+```bash
     # Get a list of topics
     $ curl "http://localhost:8082/topics"
       
@@ -50,7 +51,7 @@ the REST Proxy running using the default settings and some topics already create
       {"offsets":[{"partition":0,"offset":3,"error_code":null,"error":null}],"key_schema_id":null,"value_schema_id":null}
 
     # Create a consumer for JSON data, starting at the beginning of the topic's
-    # log. The consumer group is called "my_json_consumer" and the instance is "my consumer instance".
+    # log. The consumer group is called "my_json_consumer" and the instance is "my_consumer_instance".
     
     $ curl -X POST -H "Content-Type: application/vnd.kafka.v2+json" -H "Accept: application/vnd.kafka.v2+json" \
     --data '{"name": "my_consumer_instance", "format": "json", "auto.offset.reset": "earliest"}' \
@@ -77,7 +78,7 @@ the REST Proxy running using the default settings and some topics already create
     $ curl -X DELETE -H "Accept: application/vnd.kafka.v2+json" \
           http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance
       # No content in response
-
+```
 
 Development
 -----------
@@ -98,4 +99,4 @@ Contribute
 License
 -------
 
-The project is licensed under the Apache 2 license.
+This project is licensed under the [Confluent Community License](LICENSE).

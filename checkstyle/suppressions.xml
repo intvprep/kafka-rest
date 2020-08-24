@@ -13,12 +13,12 @@
 
     <suppress
             checks="(CyclomaticComplexity)"
-            files="(AvroConverter|AvroRestProducer|ConsumerInstanceConfig|ConsumerManager|KafkaConsumerManager|PartitionOffset).java"
+            files="(AvroConverter|SchemaRestProducer|ConsumerInstanceConfig|ConsumerManager|ConsumerReadTask|KafkaConsumerManager|PartitionOffset|KafkaRestContextProvider).java"
     />
 
     <suppress
             checks="(ClassDataAbstractionCoupling)"
-            files="(AvroConverter|ConsumerManager|KafkaConsumerManager|KafkaRestApplication|SimpleConsumerManager).java"
+            files="(AvroConverter|ConsumerManager|KafkaConsumerManager|KafkaRestApplication|SimpleConsumerManager|KafkaRestContextProvider|KafkaConsumerState|ProducerPool|TopicsResource).java"
     />
 
     <suppress
@@ -33,6 +33,14 @@
 
     <suppress
             checks="(NPathComplexity)"
-            files="(AvroRestProducer|ConsumerInstanceConfig|ConsumerManager|KafkaConsumerManager|PartitionOffset).java"
+            files="(SchemaRestProducer|ConsumerInstanceConfig|ConsumerManager|KafkaConsumerManager|PartitionOffset|KafkaRestContextProvider).java"
+    />
+    <suppress
+            checks="(MethodLength)"
+            files="(KafkaRestConfig).java"
+    />
+    <suppress
+            checks="(ParameterNumber)"
+            files="(ClusterData).java"
     />
 </suppressions>
